@@ -1,0 +1,115 @@
+    <DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>Ami</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+
+
+
+    <body>
+        <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+</div>
+
+        <center>
+
+           <h1 style = "display: inline-block;">Ami</h1> 
+          
+          <!--<span style="font-size:30px;cursor:pointer;right:0px" onclick="openNav()">&#9776; open</span>-->
+
+             <h3>Hello user! I am Ami. What can I do for you?</h3>
+
+            <div id="divboxout" class = "popup"></div>
+
+          <div id="divboxin" class = "popup"></div>
+
+             <br>
+
+             <br><br><br><br><br><br><br>
+
+             <form id="labnol" method="get" action="https://www.google.com/search">
+
+             <div class="speech">
+
+                <img onclick="startDictation()" src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-mic-128.png" width = 25px />
+
+             </div>
+
+             </form>
+
+             <div class = "file">
+
+                 <input type="file" id="fileinput">
+
+            </div>
+
+            <p id = "text">Question (Searched in DataBase)</p>
+
+            <p>
+
+                    <input type="text" id="uq"/>
+
+                    <button id="BUTTON" onclick="question();" href="javascript:;">Submit</button>
+                    <button onclick = "setReminder();" href = "javascript:;">Set up a reminder.</button>
+                    <p id = "response"></p>
+              <script>
+                function setReminder() {
+  var reminder = prompt('What time do you want the reminder to be setup?', 'Ex: 7:00PM; 11/16/2003')
+  if (typeof(Storage) !== "undefined") {
+    // Store
+    localStorage.setItem("reminder", reminder);
+    // Retrieve
+    document.getElementById("result").innerHTML = localStorage.getItem("reminder");
+} else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+}
+document.getElementById("result").innerHTML = localStorage.getItem("reminder");
+              </script>
+
+            </p>
+	    <p id = "result"></p>
+          <div>
+
+            <script>
+
+  (function() {
+
+    var cx = '009127461549445650691:when3gkyx50';
+
+    var gcse = document.createElement('script');
+
+    gcse.type = 'text/javascript';
+
+    gcse.async = true;
+
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+
+    var s = document.getElementsByTagName('script')[0];
+
+    s.parentNode.insertBefore(gcse, s);
+
+  })();
+
+</script>
+
+<!--<gcse:searchbox></gcse:searchbox>
+
+<gcse:searchresults></gcse:searchresults>-->
+</div>
+        </center>
+
+        <canvas id="canvas"></canvas>
+        <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+
+    </body>
+</html>
